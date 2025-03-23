@@ -205,15 +205,15 @@
       }
 
       function renderTodo() {
-        const searchInput = document.getElementById("mySearch");
+        const searchInput = document.getElementById("mySearch").value;
         const todos = [...document.getElementsByTagName("li")];
 
-        for (let i = 0; i < todos.length; i++) {
-          const todo = todos[i].textContent.substring(0, todos[i].textContent.length - 1);
-          if(!todo.includes(searchInput.value)) {
-            todos[i].style.display = "none";
+        for (const todo of todos) {
+          todoText = todo.textContent .substr(0, todo.textContent.length - 1).toLowerCase();
+          if (!todoText.includes(searchInput)) {
+            todo.style.display = "none";
           } else {
-            todos[i].style.display = "block";
+            todo.style.display = "block";
           }
         }
       }
