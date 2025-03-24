@@ -3,8 +3,27 @@ function travelingIndonesia(arr, emoney) {
   const result = [];
   if (!arr.length) return result;
 
-  const splittedArr = arr.map((item) => item.split("-"));
+  const splittedArr = [];
   const rute = ["Yogyakarta", "Semarang", "Surabaya", "Denpasar"];
+
+  for (const data of arr) {
+    const split = [];
+    let str = "";
+    for (const item of data) {
+      if (item !== "-") {
+        str += item;
+      } else {
+        split.push(str);
+        str = "";
+      }
+    }
+
+    if (str) {
+      split.push(str);
+    }
+
+    splittedArr.push(split);
+  }
 
   for (const item of splittedArr) {
     const name = item[0];
