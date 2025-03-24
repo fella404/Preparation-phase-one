@@ -21,6 +21,8 @@ function doubleReverse(arr) {
   //code here
   const array = [];
 
+  if (!arr.length) return "invalid input parameter";
+
   for (let i = arr.length - 1; i >= 0; i--) {
     if (arr[i].length % 2 === 0) {
       let str = "";
@@ -36,9 +38,9 @@ function doubleReverse(arr) {
 
 console.log(doubleReverse(["rabu", "cinta", "benci", "masuk", "nikmat"]));
 // [ 'tamkin', 'masuk', 'benci', 'cinta', 'ubar' ]
-// console.log(doubleReverse(["aku", "sayang", "kamu"]));
+console.log(doubleReverse(["aku", "sayang", "kamu"]));
 // [ 'umak', 'gnayas', 'aku' ]
-// console.log(doubleReverse(["pelakor", "perusak", "rumah", "tangga"]));
+console.log(doubleReverse(["pelakor", "perusak", "rumah", "tangga"]));
 //[ 'anggnat', 'rumah', 'perusak', 'pelakor' ]
-// console.log(doubleReverse([]));
+console.log(doubleReverse([]));
 // invalid input parameter
